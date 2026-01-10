@@ -1,8 +1,3 @@
-/* =====================================================
-   TITULOS DE SECCIÓN UNIFICADOS
-   Experiencia · Servicios · Portafolio
-===================================================== */
-
 .stats>h2,
 .services>h2,
 .projects>h2 {
@@ -11,7 +6,6 @@
     margin-bottom: 24px;
     font-weight: 600;
 }
-
 
 * {
     margin: 0;
@@ -29,7 +23,6 @@ body {
     color: #ffffff;
     line-height: 1.5;
 }
-
 
 .navbar {
     position: sticky;
@@ -59,7 +52,6 @@ body {
 .navbar nav a:hover {
     color: #FF0000;
 }
-
 
 .hero {
     display: flex;
@@ -103,7 +95,6 @@ body {
     max-width: 860px;
 }
 
-
 .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -139,7 +130,6 @@ body {
 .stat br {
     display: none;
 }
-
 
 .services {
     display: grid;
@@ -186,7 +176,6 @@ body {
     color: #ffffff;
 }
 
-
 .projects {
     padding: 48px 56px;
 }
@@ -208,9 +197,6 @@ body {
     text-align: center;
 }
 
-/* =====================================================
-   RESET & BASE
-===================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -228,9 +214,6 @@ body {
     line-height: 1.5;
 }
 
-/* =====================================================
-   NAVBAR
-===================================================== */
 .navbar {
     position: sticky;
     top: 0;
@@ -260,10 +243,6 @@ body {
     color: #FF0000;
 }
 
-/* =====================================================
-   HERO: AJUSTE FINAL EQUILIBRADO
-===================================================== */
-
 .hero {
     position: relative;
     height: 100vh;
@@ -282,20 +261,16 @@ body {
 
 .hero-text h1 {
     font-size: 45px;
-    /* Tamaño equilibrado */
     line-height: 1.1;
     font-weight: 800;
     margin: 15px 0;
 }
 
-/* FOTO GRANDE A LA DERECHA */
-/* 1. Ajustamos el contenedor para que ocupe todo el ancho */
 .hero-image {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
-    /* Cambiado de 65% a 100% para que use todo el ancho */
+    width: 50%;
     height: 100%;
     z-index: 1;
 }
@@ -304,12 +279,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Cambiamos 'right' por un porcentaje para centrar mejor el rostro */
-    margin-left: 43%;
-    /* Subimos el brillo para que se vea claro */
+    object-position: right center;
     filter: brightness(0.9);
 
-    /* Difuminado suave por la izquierda, nítido al centro, y ligero desvanecimiento a la derecha y abajo */
     -webkit-mask-image:
         linear-gradient(to right,
             transparent 0%,
@@ -330,16 +302,11 @@ body {
             transparent 0%,
             black 20%);
 
-    /* Fusiona ambos degradados */
     -webkit-mask-composite: source-in;
     mask-composite: intersect;
 }
 
 
-
-/* =====================================================
-   EXPERIENCIA
-===================================================== */
 .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -376,9 +343,6 @@ body {
     display: none;
 }
 
-/* =====================================================
-   SERVICES
-===================================================== */
 .services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -424,9 +388,6 @@ body {
     color: #ffffff;
 }
 
-/* =====================================================
-   PORTFOLIO
-===================================================== */
 .projects {
     padding: 48px 56px;
 }
@@ -448,9 +409,6 @@ body {
     text-align: center;
 }
 
-/* =====================================================
-   CTA
-===================================================== */
 .cta {
     margin: 48px 56px;
     padding: 48px;
@@ -477,9 +435,6 @@ body {
     font-size: 14px;
 }
 
-/* =====================================================
-   FOOTER
-===================================================== */
 footer {
     padding: 30px;
     text-align: center;
@@ -487,32 +442,147 @@ footer {
     color: #777;
 }
 
-/*TODO, ELIMINAR LINEA AZUL Y PONERLE AROJA*/
 .proyectos {
     cursor: pointer;
     color: #FF0000;
     text-decoration: none;
 }
 
-/* Todas las secciones empiezan invisibles y desplazadas */
 section {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* Clase que se añade cuando la sección entra en pantalla */
 section.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Estilo hover para botones */
 .btn:hover {
     background-color: #a00000;
-    /* Cambia el color de fondo al pasar el mouse */
     transform: scale(1.05);
-    /* Efecto de crecimiento */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Sombra suave */
+}
+
+/* ========================= */
+/* RESPONSIVE - TABLET */
+/* ========================= */
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 16px 32px;
+    }
+
+    .hero {
+        padding: 0 6%;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 32px;
+    }
+
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 32px;
+    }
+
+    .projects {
+        padding: 32px;
+    }
+
+    .cta {
+        margin: 32px;
+        padding: 32px;
+    }
+}
+
+/* ========================= */
+/* RESPONSIVE - MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+
+    .navbar nav a {
+        margin-left: 12px;
+    }
+
+    .hero {
+        height: auto;
+        flex-direction: column;
+        padding: 80px 20px 40px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+    }
+
+    /* 🔧 ARREGLO: NO SE RECORTA EN MÓVIL */
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin-left: 0;
+        max-height: 60vh;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+    }
+
+    .stat br {
+        display: inline;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+    }
+
+    .projects {
+        padding: 24px 20px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta {
+        margin: 24px 20px;
+        padding: 24px;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    footer {
+        padding: 20px;
+    }
 }
